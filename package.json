@@ -25,13 +25,7 @@
     "lint": "biome lint --write .",
     "format": "biome format --write ."
   },
-  "keywords": [
-    "hooks",
-    "library",
-    "react",
-    "react-hooks",
-    "state"
-  ],
+  "keywords": ["hooks", "library", "react", "react-hooks", "state"],
   "license": "MIT",
   "peerDependencies": {
     "react": "^18.0.0"
