@@ -25,9 +25,9 @@
     "lint": "biome lint --write .",
     "format": "biome format --write .",
     "changeset": "changeset",
-    "changeset:version": "changeset version",
-    "changeset:publish": "changeset publish",
-    "release": "pnpm run build && pnpm run changeset:publish"
+    "version": "changeset version",
+    "publish": "changeset publish",
+    "release": "pnpm run build && pnpm run publish"
   },
   "keywords": ["hooks", "library", "react", "react-hooks", "state"],
   "license": "MIT",
