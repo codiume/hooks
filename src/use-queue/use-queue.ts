@@ -25,10 +25,10 @@ export function useQueue<T>(
   const enqueue = useCallback(
     (item: T) => {
       setState((current) => {
-        const newItems = [...current.active, ...current.queue, item];
+        const newState = [...current.active, ...current.queue, item];
         return {
-          active: newItems.slice(0, limit),
-          queue: newItems.slice(limit)
+          active: newState.slice(0, limit),
+          queue: newState.slice(limit)
         };
       });
     },
@@ -38,11 +38,11 @@ export function useQueue<T>(
   const dequeue = useCallback(() => {
     let dequeuedItem: T | undefined;
     setState((current) => {
-      const allItems = [...current.active, ...current.queue];
-      dequeuedItem = allItems.shift();
+      const newState = [...current.active, ...current.queue];
+      dequeuedItem = newState.shift();
       return {
-        active: allItems.slice(0, limit),
-        queue: allItems.slice(limit)
+        active: newState.slice(0, limit),
+        queue: newState.slice(limit)
       };
     });
     return dequeuedItem;
@@ -50,10 +50,10 @@ export function useQueue<T>(
 
   const clearActive = useCallback(() => {
     setState((current) => {
-      const newItems = [...current.queue];
+      const newState = [...current.queue];
       return {
-        active: newItems.slice(0, limit),
-        queue: newItems.slice(limit)
+        active: newState.slice(0, limit),
+        queue: newState.slice(limit)
       };
     });
   }, [limit]);
