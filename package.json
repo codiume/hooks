@@ -23,7 +23,11 @@
     "build": "tsup",
     "test": "vitest test",
     "lint": "biome lint --write .",
-    "format": "biome format --write ."
+    "format": "biome format --write .",
+    "changeset": "changeset",
+    "changeset:version": "changeset version",
+    "changeset:publish": "changeset publish",
+    "release": "pnpm run build && pnpm run changeset:publish"
   },
   "keywords": ["hooks", "library", "react", "react-hooks", "state"],
   "license": "MIT",
@@ -32,6 +36,8 @@
   },
   "devDependencies": {
     "@biomejs/biome": "1.8.3",
+    "@changesets/changelog-github": "^0.5.0",
+    "@changesets/cli": "^2.27.7",
     "@testing-library/react": "^16.0.0",
     "@total-typescript/tsconfig": "^1.0.4",
     "@types/react": "^18.3.3",
