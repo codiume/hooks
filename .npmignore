@@ -1,0 +1,9 @@
+.changeset
+.github
+
+biome.json
+renovate.json
+tsconfig.json
+tsup.config.ts
+vitest.config.ts
+vitest.setup.ts
