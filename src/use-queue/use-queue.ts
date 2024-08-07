@@ -1,4 +1,4 @@
-import { useCallback, useMemo, useState } from 'react';
+import { useState } from 'react';
 
 type QueueState<T> = {
   active: T[];
@@ -8,9 +8,9 @@ type QueueState<T> = {
 type QueueActions<T> = {
   enqueue: (item: T) => void;
   dequeue: () => T | undefined;
+  clear: () => void;
   clearQueue: () => void;
   clearActive: () => void;
-  clearAll: () => void;
 };
 
 export function useQueue<T>(
@@ -22,20 +22,16 @@ export function useQueue<T>(
     queue: initialValues.slice(limit)
   }));
 
-  const enqueue = useCallback(
-    (item: T) => {
-      setState((current) => {
-        const newState = [...current.active, ...current.queue, item];
-        return {
-          active: newState.slice(0, limit),
-          queue: newState.slice(limit)
-        };
-      });
-    },
-    [limit]
-  );
+  const enqueue = (item: T) =>
+    setState((current) => {
+      const newState = [...current.active, ...current.queue, item];
+      return {
+        active: newState.slice(0, limit),
+        queue: newState.slice(limit)
+      };
+    });
 
-  const dequeue = useCallback(() => {
+  const dequeue = () => {
     let dequeuedItem: T | undefined;
     setState((current) => {
       const newState = [...current.active, ...current.queue];
@@ -46,9 +42,11 @@ export function useQueue<T>(
       };
     });
     return dequeuedItem;
-  }, [limit]);
+  };
 
-  const clearActive = useCallback(() => {
+  const clear = () => setState({ active: [], queue: [] });
+
+  const clearActive = () =>
     setState((current) => {
       const newState = [...current.queue];
       return {
@@ -56,26 +54,21 @@ export function useQueue<T>(
         queue: newState.slice(limit)
       };
     });
-  }, [limit]);
 
-  const clearQueue = useCallback(() => {
-    setState((current) => ({ ...current, queue: [] }));
-  }, []);
+  const clearQueue = () =>
+    setState((current) => ({
+      ...current,
+      queue: []
+    }));
 
-  const clearAll = useCallback(() => {
-    setState({ active: [], queue: [] });
-  }, []);
-
-  const actions = useMemo(
-    () => ({
+  return [
+    state,
+    {
       enqueue,
       dequeue,
+      clear,
       clearActive,
-      clearQueue,
-      clearAll
-    }),
-    [enqueue, dequeue, clearQueue, clearActive, clearAll]
-  );
-
-  return [state, actions];
+      clearQueue
+    }
+  ];
 }
