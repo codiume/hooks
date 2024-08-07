@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 type QueueState<T> = {
   active: T[];
@@ -21,6 +21,16 @@ export function useQueue<T>(
     active: initialValues.slice(0, limit),
     queue: initialValues.slice(limit)
   }));
+
+  useEffect(() => {
+    setState((current) => {
+      const newState = [...current.active, ...current.queue];
+      return {
+        active: newState.slice(0, limit),
+        queue: newState.slice(limit)
+      };
+    });
+  }, [limit]);
 
   const enqueue = (item: T) =>
     setState((current) => {
