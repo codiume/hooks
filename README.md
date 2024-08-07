@@ -7,6 +7,8 @@
 [![Typescript][typescript-badge]][npm]
 [![Formatted with Biome][biome-badge]][biome]
 
+A collection of reusable react hooks for state and UI management
+
 ## Installation
 
 ```bash
