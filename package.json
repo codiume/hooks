@@ -1,6 +1,6 @@
 {
   "name": "@codiume/hooks",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A collection of reusable react hooks for state and UI management",
   "author": "MHD <m@codiume.com>",
   "type": "module",
@@ -29,7 +29,13 @@
     "publish": "changeset publish",
     "release": "pnpm run build && pnpm run publish"
   },
-  "keywords": ["hooks", "library", "react", "react-hooks", "state"],
+  "keywords": [
+    "hooks",
+    "library",
+    "react",
+    "react-hooks",
+    "state"
+  ],
   "license": "MIT",
   "repository": {
     "type": "git",
