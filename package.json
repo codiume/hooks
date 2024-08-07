@@ -24,8 +24,8 @@
     "test": "vitest test",
     "lint": "biome lint --write .",
     "format": "biome format --write .",
+    "check": "biome check --write .",
     "changeset": "changeset",
-    "version": "changeset version",
     "publish": "changeset publish",
     "release": "pnpm run build && pnpm run publish"
   },
