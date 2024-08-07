@@ -66,4 +66,15 @@ describe('useQueue', () => {
     expect(dequeuedItem).toBeUndefined();
     expect(result.current[0]).toEqual({ active: [], queue: [] });
   });
+
+  it('should handle limit changes', () => {
+    const { result, rerender } = renderHook(
+      ({ limit }: { limit: number }) => useQueue<number>([1, 2, 3, 4], limit),
+      { initialProps: { limit: 2 } }
+    );
+    expect(result.current[0]).toEqual({ active: [1, 2], queue: [3, 4] });
+
+    rerender({ limit: 3 });
+    expect(result.current[0]).toEqual({ active: [1, 2, 3], queue: [4] });
+  });
 });
