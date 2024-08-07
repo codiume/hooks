@@ -32,32 +32,27 @@ export function useQueue<T>(
     });
 
   const dequeue = () => {
-    let dequeuedItem: T | undefined;
-    setState((current) => {
-      const newState = [...current.active, ...current.queue];
-      dequeuedItem = newState.shift();
-      return {
-        active: newState.slice(0, limit),
-        queue: newState.slice(limit)
-      };
+    const [dequeued, ...rest] = [...state.active, ...state.queue];
+    setState({
+      active: rest.slice(0, limit),
+      queue: rest.slice(limit)
     });
-    return dequeuedItem;
+    return dequeued;
   };
 
   const clear = () => setState({ active: [], queue: [] });
 
   const clearActive = () =>
     setState((current) => {
-      const newState = [...current.queue];
       return {
-        active: newState.slice(0, limit),
-        queue: newState.slice(limit)
+        active: current.queue.slice(0, limit),
+        queue: current.queue.slice(limit)
       };
     });
 
   const clearQueue = () =>
     setState((current) => ({
-      ...current,
+      active: current.active,
       queue: []
     }));
 
