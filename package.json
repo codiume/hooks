@@ -28,13 +28,7 @@
     "publish": "changeset publish",
     "release": "pnpm run build && pnpm run publish"
   },
-  "keywords": [
-    "hooks",
-    "library",
-    "react",
-    "react-hooks",
-    "state"
-  ],
+  "keywords": ["hooks", "library", "react", "react-hooks", "state"],
   "license": "MIT",
   "repository": {
     "type": "git",
