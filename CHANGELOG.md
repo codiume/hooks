@@ -1,5 +1,11 @@
 # @codiume/hooks
 
+## 0.0.4
+
+### Patch Changes
+
+- [`941486a`](https://github.com/codiume/hooks/commit/941486aaaae40a1dcf0c7be871db4c6ddf8e5268) Thanks [@the-dijkstra](https://github.com/the-dijkstra)! - Fix changeset
+
 ## 0.0.3
 
 ### Patch Changes
