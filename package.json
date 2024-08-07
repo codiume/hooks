@@ -1,6 +1,6 @@
 {
   "name": "@codiume/hooks",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A collection of reusable react hooks for state and UI management",
   "author": "MHD <m@codiume.com>",
   "type": "module",

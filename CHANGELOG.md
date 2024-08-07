@@ -1,5 +1,11 @@
 # @codiume/hooks
 
+## 0.0.3
+
+### Patch Changes
+
+- [#18](https://github.com/codiume/hooks/pull/18) [`8b19e80`](https://github.com/codiume/hooks/commit/8b19e801d03072dfb4548d7b736230c99098cf42) Thanks [@the-dijkstra](https://github.com/the-dijkstra)! - Fix publishing to npm
+
 ## 0.0.2
 
 ### Patch Changes
