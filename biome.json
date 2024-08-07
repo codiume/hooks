@@ -18,7 +18,7 @@
     "lineEnding": "lf",
     "lineWidth": 80,
     "attributePosition": "auto",
-    "ignore": [".github", "dist", "node_modules"]
+    "ignore": ["dist", "node_modules"]
   },
   "javascript": {
     "formatter": {
