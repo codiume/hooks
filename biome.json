@@ -8,11 +8,7 @@
     "rules": {
       "recommended": true
     },
-    "ignore": [
-      ".github",
-      "dist",
-      "node_modules"
-    ]
+    "ignore": [".github", "dist", "node_modules"]
   },
   "formatter": {
     "enabled": true,
@@ -22,11 +18,7 @@
     "lineEnding": "lf",
     "lineWidth": 80,
     "attributePosition": "auto",
-    "ignore": [
-      ".github",
-      "dist",
-      "node_modules"
-    ]
+    "ignore": [".github", "dist", "node_modules"]
   },
   "javascript": {
     "formatter": {
