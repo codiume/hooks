@@ -1,5 +1,11 @@
 # @codiume/hooks
 
+## 0.0.5
+
+### Patch Changes
+
+- [#22](https://github.com/codiume/hooks/pull/22) [`c0ebbcc`](https://github.com/codiume/hooks/commit/c0ebbcc84e49a8ffbcaf233b7d7ad2ffe4e98980) Thanks [@the-dijkstra](https://github.com/the-dijkstra)! - Fix tsup to target browser
+
 ## 0.0.4
 
 ### Patch Changes
