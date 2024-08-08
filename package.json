@@ -31,9 +31,9 @@
   "scripts": {
     "build": "tsup",
     "test": "vitest test",
-    "lint": "biome lint --write src",
-    "format": "biome format --write src",
-    "check": "biome check --write src",
+    "lint": "biome lint --write .",
+    "format": "biome format --write .",
+    "check": "biome check --write .",
     "changeset": "changeset",
     "release": "pnpm run build && changeset publish"
   },
