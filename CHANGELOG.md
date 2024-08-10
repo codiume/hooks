@@ -1,5 +1,11 @@
 # @codiume/hooks
 
+## 0.0.6
+
+### Patch Changes
+
+- [#24](https://github.com/codiume/hooks/pull/24) [`a778506`](https://github.com/codiume/hooks/commit/a778506d2be4ae26f41089419ac01b64c1e19cfc) Thanks [@the-dijkstra](https://github.com/the-dijkstra)! - Add use-scroll hook
+
 ## 0.0.5
 
 ### Patch Changes
