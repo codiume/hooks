@@ -51,11 +51,6 @@ export function useScroll(ref: RefObject<HTMLElement>) {
       signal: abortController.signal
     });
 
-    el.addEventListener('resize', handler, {
-      passive: true,
-      signal: abortController.signal
-    });
-
     return () => {
       abortController.abort();
     };

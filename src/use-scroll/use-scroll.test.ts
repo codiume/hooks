@@ -46,18 +46,10 @@ describe('useScroll', () => {
     expect(scrollPosition).toEqual({ x: 100, y: 200 });
   });
 
-  it('should add scroll and resize event listeners', () => {
+  it('should add scroll event listeners', () => {
     renderHook(() => useScroll(ref));
     expect(mockElement.addEventListener).toHaveBeenCalledWith(
       'scroll',
-      expect.any(Function),
-      expect.objectContaining({
-        passive: true,
-        signal: expect.any(AbortSignal)
-      })
-    );
-    expect(mockElement.addEventListener).toHaveBeenCalledWith(
-      'resize',
       expect.any(Function),
       expect.objectContaining({
         passive: true,
