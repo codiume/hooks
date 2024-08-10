@@ -16,8 +16,8 @@ export function useScroll(ref: RefObject<HTMLElement>) {
       { x, y }: Partial<ScrollPosition>,
       options: ScrollOptions = { behavior: 'smooth' }
     ) => {
-      const element = ref.current;
-      if (!element) return;
+      const el = ref.current;
+      if (!el) return;
 
       const scrollOptions: ScrollToOptions = { ...options };
 
@@ -29,29 +29,29 @@ export function useScroll(ref: RefObject<HTMLElement>) {
         scrollOptions.top = y;
       }
 
-      element.scrollTo(scrollOptions);
+      el.scrollTo(scrollOptions);
     },
     [ref]
   );
 
   useEffect(() => {
-    const element = ref.current;
-    if (!element) return;
+    const el = ref.current;
+    if (!el) return;
 
     const abortController = new AbortController();
 
     const handler = () =>
       setScrollPosition({
-        x: element.scrollLeft,
-        y: element.scrollTop
+        x: el.scrollLeft,
+        y: el.scrollTop
       });
 
-    element.addEventListener('scroll', handler, {
+    el.addEventListener('scroll', handler, {
       passive: true,
       signal: abortController.signal
     });
 
-    element.addEventListener('resize', handler, {
+    el.addEventListener('resize', handler, {
       passive: true,
       signal: abortController.signal
     });
