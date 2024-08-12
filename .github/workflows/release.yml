@@ -32,7 +32,9 @@ jobs:
         id: changesets
         uses: changesets/action@v1
         with:
-          publish: pnpm run release
+          version: pnpm run changeset:version
+          publish: pnpm run changeset:publish
+
         env:
           NPM_CONFIG_PROVENANCE: true
           GITHUB_TOKEN: ${{ github.token }}
