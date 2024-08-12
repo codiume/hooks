@@ -1,5 +1,11 @@
 # @codiume/hooks
 
+## 0.0.7
+
+### Patch Changes
+
+- [#26](https://github.com/codiume/hooks/pull/26) [`50ccec2`](https://github.com/codiume/hooks/commit/50ccec2cb5b6640bbc8ea440f0c1724921548ac2) Thanks [@the-dijkstra](https://github.com/the-dijkstra)! - Add [use-singleton] hook
+
 ## 0.0.6
 
 ### Patch Changes
