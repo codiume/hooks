@@ -1,5 +1,11 @@
 # @codiume/hooks
 
+## 0.0.8
+
+### Patch Changes
+
+- [#28](https://github.com/codiume/hooks/pull/28) [`410caf2`](https://github.com/codiume/hooks/commit/410caf29a062aa10291de16353ef5af6c490c331) Thanks [@the-dijkstra](https://github.com/the-dijkstra)! - Update [use-singleton] tests
+
 ## 0.0.7
 
 ### Patch Changes
