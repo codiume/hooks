@@ -1,5 +1,11 @@
 # @codiume/hooks
 
+## 0.0.9
+
+### Patch Changes
+
+- [#30](https://github.com/codiume/hooks/pull/30) [`493666a`](https://github.com/codiume/hooks/commit/493666a22e6455124dca01d58a1bc45b0e34bd1d) Thanks [@the-dijkstra](https://github.com/the-dijkstra)! - Add [use-in-viewport] hook & docs
+
 ## 0.0.8
 
 ### Patch Changes
