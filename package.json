@@ -3,13 +3,7 @@
   "version": "0.0.9",
   "description": "A collection of reusable react hooks for state and UI management",
   "homepage": "https://github.com/codiume/hooks.git",
-  "keywords": [
-    "hooks",
-    "library",
-    "react",
-    "react-hooks",
-    "state"
-  ],
+  "keywords": ["hooks", "library", "react", "react-hooks", "state"],
   "author": "MHD <m@codiume.com>",
   "contributors": [
     {
@@ -21,9 +15,7 @@
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "exports": {
     ".": {
       "import": {
