@@ -1,26 +1,35 @@
-# 👁️ useInViewport
+# 🖱️ useScroll
 
-Detects if element is visible in the viewport Using the [Intersection Observer API](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API)
+Tracks scroll position of an element, it uses `AbortController` for clean-up
 
 ## Usage
 
 ```jsx
-import {useInViewport} from "@codiume/hooks";
+import { useScroll } from "@codiume/hooks";
 
 function Demo() {
-  const [ref, inViewport] = useInViewport<HTMLDivElement>({
-    root: null, // Use the viewport as the container
-    rootMargin: "0px", // Margin around the root
-    threshold: 0.1, // 10% of the element is visible
-  });
+  const ref = useRef<HTMLDivElement>(null);
+  const [{ x, y }, scrollTo] = useScroll(ref);
 
   return (
-    <div style={{ height: 2000 }}>
-      <h1 style={{ position: "fixed" }}>
-        {inViewport ? "In View" : "Not In View"}
-      </h1>
-      <div ref={ref} style={{ height: "300px", backgroundColor: "lightblue" }}>
-        Observe me!
+    <div>
+      <p>
+        Scroll position: x: {x}, y: {y}
+      </p>
+      <button onClick={() => scrollTo({ y: 0 }, { behavior: "auto" })}>
+        Scroll to top
+      </button>
+      <div
+        ref={ref}
+        style={{
+          height: "300px",
+          width: "300px",
+          overflow: "auto",
+          border: "1px solid black",
+          resize: "both",
+        }}
+      >
+        <div style={{ height: "1000px", width: "1000px" }}>Scroll me!</div>
       </div>
     </div>
   );

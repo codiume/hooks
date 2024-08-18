@@ -1,28 +1,37 @@
-# 👁️ useInViewport
+# 🔒 useSingleton
 
-Detects if element is visible in the viewport Using the [Intersection Observer API](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API)
+Creates a value exactly once.
 
 ## Usage
 
 ```jsx
-import {useInViewport} from "@codiume/hooks";
+import { useSingleton } from "@codiume/hooks";
 
 function Demo() {
-  const [ref, inViewport] = useInViewport<HTMLDivElement>({
-    root: null, // Use the viewport as the container
-    rootMargin: "0px", // Margin around the root
-    threshold: 0.1, // 10% of the element is visible
-  });
+  const value = useSingleton({ foo: 'bar' });
 
   return (
-    <div style={{ height: 2000 }}>
-      <h1 style={{ position: "fixed" }}>
-        {inViewport ? "In View" : "Not In View"}
-      </h1>
-      <div ref={ref} style={{ height: "300px", backgroundColor: "lightblue" }}>
-        Observe me!
-      </div>
-    </div>
+    <div>{value}</div>
   );
 }
 ```
+
+## Example (TanStack Query)
+
+```jsx
+import { useSingleton } from "@codiume/hooks";
+
+function Demo() {
+  const queryClient = useSingleton(new QueryClient());
+
+  return (
+    <QueryClientProvider client={queryClient}>
+      {children}
+    </QueryClientProvider>
+  );
+}
+```
+
+## Acknowledgements
+
+- [use-constant](https://github.com/Andarist/use-constant)
