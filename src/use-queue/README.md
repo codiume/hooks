@@ -1,6 +1,6 @@
 # 🔄 useQueue
 
-`useQueue` Provides a simple and efficient way to manage queue-like data structures in React applications,
+Provides a simple and efficient way to manage queue-like data structures in React applications,
 It's type-safe, easy to use, and can be adapted for various use cases where FIFO behavior is needed.
 
 ## Usage

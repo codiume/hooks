@@ -22,12 +22,14 @@ npm install @codiume/hooks
 yarn add @codiume/hooks
 ```
 
-## Usage
+## Hooks
 
-- [use-in-viewport](./docs/use-in-viewport)
-- [use-queue](./docs/use-queue)
-- [use-scroll](./docs/use-scroll)
-- [use-singleton](./docs/use-singleton)
+| Hook                                     | Description                                    |
+| ---------------------------------------- | ---------------------------------------------- |
+| [use-in-viewport](./src/use-in-viewport) | Detects if element is visible in the viewport  |
+| [use-queue](./src/use-queue)             | Manage state of elements in FIFO-like strategy |
+| [use-scroll](./src/use-scroll)           | Tracks scroll position of an element           |
+| [use-singleton](./src/use-singleton)     | Creates a value exactly once                   |
 
 ## Contributing
 
