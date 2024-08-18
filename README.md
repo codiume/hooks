@@ -22,6 +22,13 @@ npm install @codiume/hooks
 yarn add @codiume/hooks
 ```
 
+## Usage
+
+- [use-in-viewport](./docs/use-in-viewport)
+- [use-queue](./docs/use-queue)
+- [use-scroll](./docs/use-scroll)
+- [use-singleton](./docs/use-singleton)
+
 ## Contributing
 
 Please see [Contributing.md](CONTRIBUTING.md) for details.
