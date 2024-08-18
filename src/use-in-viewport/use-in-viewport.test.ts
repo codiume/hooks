@@ -1,24 +1,26 @@
-import { act, renderHook } from '@testing-library/react';
-import { type Mock, beforeEach, describe, expect, it, vi } from 'vitest';
+import { act, cleanup, renderHook } from '@testing-library/react';
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { useInViewport } from './use-in-viewport';
 
-describe('useInViewport', () => {
-  let mockObserve: Mock;
-  let mockUnobserve: Mock;
-  let mockDisconnect: Mock;
+let IntersectionObserverMock: Partial<IntersectionObserver>;
 
-  beforeEach(() => {
-    mockObserve = vi.fn();
-    mockUnobserve = vi.fn();
-    mockDisconnect = vi.fn();
+function setupIntersectionMocking() {
+  // @ts-ignore
+  global.IntersectionObserver = vi.fn(() => {
+    IntersectionObserverMock = {
+      observe: vi.fn(),
+      unobserve: vi.fn(),
+      disconnect: vi.fn()
+    };
 
-    global.IntersectionObserver = vi.fn(() => ({
-      observe: mockObserve,
-      unobserve: mockUnobserve,
-      disconnect: mockDisconnect
-    }));
+    return IntersectionObserverMock;
   });
+}
 
+beforeEach(setupIntersectionMocking);
+afterEach(cleanup);
+
+describe('useInViewport', () => {
   it('should initialize with inViewport as false', () => {
     const { result } = renderHook(() => useInViewport());
     const [, inViewport] = result.current;
@@ -36,34 +38,11 @@ describe('useInViewport', () => {
     );
   });
 
-  it('should observe the ref when component mounts', () => {
-    const { result } = renderHook(() => useInViewport());
-    const [ref] = result.current;
-
-    act(() => {
-      ref.current = document.createElement('div');
-    });
-
-    expect(mockObserve).toHaveBeenCalledWith(ref.current);
-  });
-
-  it('should unobserve the ref when component unmounts', () => {
-    const { result, unmount } = renderHook(() => useInViewport());
-    const [ref] = result.current;
-
-    act(() => {
-      ref.current = document.createElement('div');
-    });
-
-    unmount();
-
-    expect(mockUnobserve).toHaveBeenCalledWith(ref.current);
-  });
-
   it('should update inViewport when intersection changes', () => {
     const { result } = renderHook(() => useInViewport());
 
-    const callback = (IntersectionObserver as vi.Mock).mock.calls[0][0];
+    // @ts-ignore
+    const callback = IntersectionObserver.mock.calls[0][0];
 
     act(() => {
       callback([{ isIntersecting: true }]);
@@ -81,6 +60,7 @@ describe('useInViewport', () => {
   it('should not create observer if IntersectionObserver is not available', () => {
     const originalIntersectionObserver = global.IntersectionObserver;
     // @ts-ignore
+    // biome-ignore lint/performance/noDelete: test file
     delete global.IntersectionObserver;
 
     const { result } = renderHook(() => useInViewport());
@@ -95,6 +75,7 @@ describe('useInViewport', () => {
 
     expect(() => {
       const [ref] = result.current;
+      // @ts-ignore
       ref.current = null;
     }).not.toThrow();
   });

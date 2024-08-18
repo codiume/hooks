@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 
 export function useInViewport<T extends HTMLElement = HTMLElement>(
   options?: IntersectionObserverInit
@@ -6,18 +6,14 @@ export function useInViewport<T extends HTMLElement = HTMLElement>(
   const [inViewport, setInViewport] = useState(false);
   const ref = useRef<T>(null);
 
-  const callback = useCallback((entries: IntersectionObserverEntry[]) => {
-    const [entry] = entries;
-    setInViewport(entry?.isIntersecting ?? false);
-  }, []);
+  const observer = useMemo(() => {
+    if (typeof IntersectionObserver === 'undefined') return undefined;
 
-  const observer = useMemo(
-    () =>
-      typeof IntersectionObserver !== 'undefined'
-        ? new IntersectionObserver(callback, options)
-        : null,
-    [callback, options]
-  );
+    return new IntersectionObserver((entries: IntersectionObserverEntry[]) => {
+      const [entry] = entries;
+      setInViewport(entry?.isIntersecting ?? false);
+    }, options);
+  }, [options]);
 
   useEffect(() => {
     if (ref.current && observer) {
@@ -27,7 +23,6 @@ export function useInViewport<T extends HTMLElement = HTMLElement>(
         observer.unobserve(ref.current as T);
       };
     }
-    return undefined;
   }, [observer]);
 
   return [ref, inViewport] as const;
