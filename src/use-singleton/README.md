@@ -8,7 +8,7 @@ Creates a value exactly once.
 import { useSingleton } from "@codiume/hooks";
 
 function Demo() {
-  const value = useSingleton({ foo: 'bar' });
+  const value = useSingleton(() => ({ foo: 'bar' }));
 
   return (
     <div>{value}</div>
@@ -22,7 +22,7 @@ function Demo() {
 import { useSingleton } from "@codiume/hooks";
 
 function Demo() {
-  const queryClient = useSingleton(new QueryClient());
+  const queryClient = useSingleton(() => new QueryClient());
 
   return (
     <QueryClientProvider client={queryClient}>
