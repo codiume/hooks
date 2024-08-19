@@ -1,5 +1,11 @@
 # @codiume/hooks
 
+## 0.0.10
+
+### Patch Changes
+
+- [#33](https://github.com/codiume/hooks/pull/33) [`39154c8`](https://github.com/codiume/hooks/commit/39154c8784d9d11a17a934f050d8cf23bb15a1f3) Thanks [@the-dijkstra](https://github.com/the-dijkstra)! - Update docs
+
 ## 0.0.9
 
 ### Patch Changes
