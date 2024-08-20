@@ -9,9 +9,7 @@ const scrollTo = (
   { x, y }: Partial<ScrollPosition>,
   options: ScrollOptions = { behavior: 'smooth' }
 ) => {
-  if (typeof window === 'undefined') {
-    return;
-  }
+  if (typeof window === 'undefined') return;
 
   const scrollOptions: ScrollToOptions = { ...options };
   if (typeof x === 'number') {
