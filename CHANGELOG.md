@@ -1,5 +1,11 @@
 # @codiume/hooks
 
+## 0.0.11
+
+### Patch Changes
+
+- [#35](https://github.com/codiume/hooks/pull/35) [`1ae7ee5`](https://github.com/codiume/hooks/commit/1ae7ee57ce68ea732e6a11d69ea0590475af75fd) Thanks [@the-dijkstra](https://github.com/the-dijkstra)! - Add [use-window-scroll] hook
+
 ## 0.0.10
 
 ### Patch Changes
