@@ -1,36 +1,26 @@
-# 🖱️ useScroll
+# 🗄️ useLocalStorage
 
-Tracks scroll position of an element, it uses `AbortController` for clean-up
+A React hook that provides a way to use localStorage with a similar API to useState. It handles serialization, error handling, and syncs across tabs.
 
 ## Usage
 
 ```jsx
-import { useScroll } from "@codiume/hooks";
+import { useLocalStorage } from '@hooks/use-local-storage';
 
 function Demo() {
-  const ref = useRef<HTMLDivElement>(null);
-  const [{ x, y }, scrollTo] = useScroll(ref);
+  // The hook will read value from localStorage.getItem('color-scheme')
+  // If localStorage is not available or value at a given key does not exist
+  // 'dark' will be assigned to colorScheme variable
+  const [colorScheme, setColorScheme] = useLocalStorage('color-scheme', 'dark');
+
+  const toggleColorScheme = () => {
+    setColorScheme(prevScheme => prevScheme === 'dark' ? 'light' : 'dark');
+  };
 
   return (
     <div>
-      <p>
-        Scroll position: x: {x}, y: {y}
-      </p>
-      <button onClick={() => scrollTo({ y: 0 }, { behavior: "auto" })}>
-        Scroll to top
-      </button>
-      <div
-        ref={ref}
-        style={{
-          height: "300px",
-          width: "300px",
-          overflow: "auto",
-          border: "1px solid black",
-          resize: "both",
-        }}
-      >
-        <div style={{ height: "1000px", width: "1000px" }}>Scroll me!</div>
-      </div>
+      <p>Current color scheme: {colorScheme}</p>
+      <button onClick={toggleColorScheme}>Toggle color scheme</button>
     </div>
   );
 }

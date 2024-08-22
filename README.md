@@ -24,13 +24,14 @@ yarn add @codiume/hooks
 
 ## Hooks
 
-| Hook                                         | Description                                    |
-| -------------------------------------------- | ---------------------------------------------- |
-| [use-in-viewport](./src/use-in-viewport)     | Detects if element is visible in the viewport  |
-| [use-queue](./src/use-queue)                 | Manage state of elements in FIFO-like strategy |
-| [use-scroll](./src/use-scroll)               | Tracks scroll position of an element           |
-| [use-singleton](./src/use-singleton)         | Creates a value exactly once                   |
-| [use-window-scroll](./src/use-window-scroll) | Tracks scroll position of the window           |
+| Hook                                         | Description                                     |
+| -------------------------------------------- | ----------------------------------------------- |
+| [use-in-viewport](./src/use-in-viewport)     | Detects if element is visible in the viewport   |
+| [use-queue](./src/use-queue)                 | Manage state of elements in FIFO-like strategy  |
+| [use-scroll](./src/use-scroll)               | Tracks scroll position of an element            |
+| [use-singleton](./src/use-singleton)         | Creates a value exactly once                    |
+| [use-window-scroll](./src/use-window-scroll) | Tracks scroll position of the window            |
+| [use-local-storage](./src/use-local-storage) | Manages state with localStorage synchronization |
 
 ## Contributing
 
