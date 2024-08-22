@@ -7,12 +7,10 @@ describe('useLocalStorage', () => {
   const initialValue = { test: 'initialValue' };
 
   beforeEach(() => {
-    // Clear localStorage before each test
     localStorage.clear();
   });
 
   afterEach(() => {
-    // Clear all mocks after each test
     vi.clearAllMocks();
   });
 
@@ -87,7 +85,6 @@ describe('useLocalStorage', () => {
   it('should update the state when localStorage changes in another tab', () => {
     const { result } = renderHook(() => useLocalStorage(key, initialValue));
 
-    // Simulate storage event
     const newValue = { test: 'updatedInAnotherTab' };
     const event = new StorageEvent('storage', {
       key,
