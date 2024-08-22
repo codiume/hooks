@@ -52,7 +52,7 @@
     "@changesets/cli": "^2.27.7",
     "@testing-library/react": "^16.0.0",
     "@total-typescript/tsconfig": "^1.0.4",
-    "@types/react": "^18.3.3",
+    "@types/react": "^18.3.4",
     "@vitejs/plugin-react": "^4.3.1",
     "jsdom": "^24.1.1",
     "tsup": "^8.2.4",
