@@ -1,5 +1,11 @@
 # @codiume/hooks
 
+## 0.0.12
+
+### Patch Changes
+
+- [#38](https://github.com/codiume/hooks/pull/38) [`3e25e8e`](https://github.com/codiume/hooks/commit/3e25e8ebe34498cdf71e6c206998cb550933a444) Thanks [@the-dijkstra](https://github.com/the-dijkstra)! - Add [use-local-storage] hook
+
 ## 0.0.11
 
 ### Patch Changes
