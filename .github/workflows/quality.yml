@@ -4,6 +4,8 @@ on:
   pull_request:
     branches: [main]
 
+concurrency: ${{ github.workflow }}-${{ github.ref }}
+
 jobs:
   quality:
     runs-on: ubuntu-latest

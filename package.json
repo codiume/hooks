@@ -29,15 +29,18 @@
     }
   },
   "scripts": {
+    "prebuild": "pnpm check-lint && pnpm check-types",
     "build": "tsup",
+    "postbuild": "pnpm check-exports",
     "test": "vitest test",
     "lint": "biome lint --write .",
     "format": "biome format --write .",
-    "check": "biome check --write .",
+    "check-lint": "biome check src",
     "check-exports": "attw --pack .",
+    "check-types": "tsc",
     "changeset": "changeset",
     "changeset:version": "changeset version && pnpm run format",
-    "changeset:publish": "pnpm run build && changeset publish"
+    "changeset:publish": "pnpm build && changeset publish"
   },
   "license": "MIT",
   "repository": {
