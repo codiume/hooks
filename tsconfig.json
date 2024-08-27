@@ -1,3 +1,8 @@
 {
-  "extends": "@total-typescript/tsconfig/bundler/dom/library"
+  "extends": "@total-typescript/tsconfig/bundler/dom/library",
+  "compilerOptions": {
+    "noEmit": true,
+    "outDir": "./dist",
+    "allowImportingTsExtensions": false
+  }
 }
