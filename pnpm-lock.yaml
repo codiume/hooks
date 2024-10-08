@@ -41,10 +41,10 @@ importers:
         version: 25.0.1
       tsup:
         specifier: ^8.2.4
-        version: 8.3.0(postcss@8.4.47)(typescript@5.6.2)
+        version: 8.3.0(postcss@8.4.47)(typescript@5.6.3)
       typescript:
         specifier: ^5.5.4
-        version: 5.6.2
+        version: 5.6.3
       vitest:
         specifier: ^2.0.5
         version: 2.1.2(jsdom@25.0.1)
@@ -1902,8 +1902,8 @@ packages:
     engines: {node: '>=14.17'}
     hasBin: true
 
-  typescript@5.6.2:
-    resolution: {integrity: sha512-NW8ByodCSNCwZeghjN3o+JX5OFH0Ojg6sadjEKY4huZ52TqbJTJnDo5+Tw98lSy63NZvi4n+ez5m2u5d4PkZyw==}
+  typescript@5.6.3:
+    resolution: {integrity: sha512-hjcS1mhfuyi4WW8IWtjP7brDrG2cuDZukyrYrSauoXGNgx0S7zceP07adYkJycEr56BOUTNPzbInooiN3fn1qw==}
     engines: {node: '>=14.17'}
     hasBin: true
 
@@ -3818,7 +3818,7 @@ snapshots:
 
   ts-interface-checker@0.1.13: {}
 
-  tsup@8.3.0(postcss@8.4.47)(typescript@5.6.2):
+  tsup@8.3.0(postcss@8.4.47)(typescript@5.6.3):
     dependencies:
       bundle-require: 5.0.0(esbuild@0.23.1)
       cac: 6.7.14
@@ -3838,7 +3838,7 @@ snapshots:
       tree-kill: 1.2.2
     optionalDependencies:
       postcss: 8.4.47
-      typescript: 5.6.2
+      typescript: 5.6.3
     transitivePeerDependencies:
       - jiti
       - supports-color
@@ -3847,7 +3847,7 @@ snapshots:
 
   typescript@5.6.1-rc: {}
 
-  typescript@5.6.2: {}
+  typescript@5.6.3: {}
 
   unicode-emoji-modifier-base@1.0.0: {}
 
