@@ -48,20 +48,22 @@
     "url": "https://github.com/codiume/hooks.git"
   },
   "peerDependencies": {
-    "react": "^18.0.0"
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
   },
   "devDependencies": {
     "@arethetypeswrong/cli": "^0.17.0",
     "@biomejs/biome": "1.9.4",
     "@changesets/changelog-github": "^0.5.0",
-    "@changesets/cli": "^2.27.7",
-    "@testing-library/react": "^16.0.0",
+    "@changesets/cli": "^2.27.10",
+    "@testing-library/react": "^16.1.0",
     "@total-typescript/tsconfig": "^1.0.4",
-    "@types/react": "^18.3.4",
-    "@vitejs/plugin-react": "^4.3.1",
-    "jsdom": "^25.0.0",
-    "tsup": "^8.2.4",
-    "typescript": "^5.5.4",
-    "vitest": "^2.0.5"
+    "@types/react": "^19.0.1",
+    "@types/react-dom": "^19.0.1",
+    "@vitejs/plugin-react": "^4.3.4",
+    "jsdom": "^25.0.1",
+    "tsup": "^8.3.5",
+    "typescript": "^5.7.2",
+    "vitest": "^2.1.8"
   }
 }
