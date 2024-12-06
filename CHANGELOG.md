@@ -1,5 +1,11 @@
 # @codiume/hooks
 
+## 0.1.0
+
+### Minor Changes
+
+- [#89](https://github.com/codiume/hooks/pull/89) [`dc578cb`](https://github.com/codiume/hooks/commit/dc578cb477d76706a57d2d021ed31f3346228733) Thanks [@mhdcodes](https://github.com/mhdcodes)! - Update react to v19
+
 ## 0.0.12
 
 ### Patch Changes
