@@ -4,3 +4,4 @@ export { useQueue } from './use-queue/use-queue';
 export { useScroll } from './use-scroll/use-scroll';
 export { useSingleton } from './use-singleton/use-singleton';
 export { useWindowScroll } from './use-window-scroll/use-window-scroll';
+export { useMediaQuery } from "./use-media-query/use-media-query";
