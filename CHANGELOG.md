@@ -1,5 +1,11 @@
 # @codiume/hooks
 
+## 0.2.0
+
+### Minor Changes
+
+- [#96](https://github.com/codiume/hooks/pull/96) [`c3fb271`](https://github.com/codiume/hooks/commit/c3fb27102116b6d38d5c5ba72661b60e11aed491) Thanks [@NekoSakuraLucia](https://github.com/NekoSakuraLucia)! - Added 3 new hooks and refactored code structure for better organization.
+
 ## 0.1.0
 
 ### Minor Changes
