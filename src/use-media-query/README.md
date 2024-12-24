@@ -1,10 +1,6 @@
 # useMediaQuery
 
-A custom React Hook for checking if a specific media query matches the current viewport.
-
-## Installation
-
-To use this hook, ensure you have a React project set up. Copy the `useMediaQuery` implementation into your project or include it as part of your hooks library.
+A React hook that monitors whether a specific media query matches the current viewport.
 
 ## Usage
 
@@ -25,6 +21,4 @@ const ExampleComponent = () => {
     </div>
   );
 };
-
-export default ExampleComponent;
 ```
