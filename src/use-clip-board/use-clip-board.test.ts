@@ -1,6 +1,6 @@
-import { renderHook, act } from '@testing-library/react';
+import { act, renderHook } from '@testing-library/react';
+import { describe, expect, it, vi } from 'vitest';
 import { useClipboard } from './use-clip-board';
-import { vi, describe, it, expect } from 'vitest';
 
 vi.useFakeTimers();
 
@@ -8,7 +8,7 @@ describe('useClipboard', () => {
   it('should copy text to the clipboard and set copied to true', async () => {
     const writeTextMock = vi.fn().mockResolvedValue(undefined);
     Object.assign(navigator, {
-      clipboard: { writeText: writeTextMock },
+      clipboard: { writeText: writeTextMock }
     });
 
     const { result } = renderHook(() => useClipboard());
@@ -30,7 +30,7 @@ describe('useClipboard', () => {
 
   it('should handle clipboard API not being supported', async () => {
     Object.assign(navigator, {
-      clipboard: undefined,
+      clipboard: undefined
     });
 
     const { result } = renderHook(() => useClipboard());
