@@ -14,10 +14,14 @@ A collection of reusable react hooks for state and UI management
 ```bash
 # Using PNPM
 pnpm install @codiume/hooks
+```
 
+```bash
 # Using NPM
 npm install @codiume/hooks
+```
 
+```bash
 # Using Yarn
 yarn add @codiume/hooks
 ```
