@@ -5,3 +5,4 @@ export { useScroll } from './use-scroll/use-scroll';
 export { useSingleton } from './use-singleton/use-singleton';
 export { useWindowScroll } from './use-window-scroll/use-window-scroll';
 export { useMediaQuery } from "./use-media-query/use-media-query";
+export { useClipboard } from "./use-clip-board/use-clip-board";
