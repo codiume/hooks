@@ -4,8 +4,6 @@
 
 ### Minor Changes
 
-- [#98](https://github.com/codiume/hooks/pull/98) [`e0522c3`](https://github.com/codiume/hooks/commit/e0522c39ecdc6338b27bfbe7bd89685d57d1e833) Thanks [@mhdcodes](https://github.com/mhdcodes)! - Improve docs & Refactor few hooks
-
 - [#98](https://github.com/codiume/hooks/pull/98) [`e0522c3`](https://github.com/codiume/hooks/commit/e0522c39ecdc6338b27bfbe7bd89685d57d1e833) Thanks [@mhdcodes](https://github.com/mhdcodes)! - Improve [use-hover] & [use-clipboard] hooks
 
 ## 0.2.0
