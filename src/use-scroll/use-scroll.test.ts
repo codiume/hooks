@@ -58,12 +58,6 @@ describe('useScroll', () => {
     );
   });
 
-  it('should clean up event listeners on unmount', () => {
-    const { unmount } = renderHook(() => useScroll(ref));
-    unmount();
-    expect(mockElement.removeEventListener).not.toHaveBeenCalled(); // AbortController is used instead
-  });
-
   it('should provide a scrollTo function', () => {
     const { result } = renderHook(() => useScroll(ref));
     const [, scrollTo] = result.current;
@@ -120,5 +114,27 @@ describe('useScroll', () => {
       top: 100,
       behavior: 'auto'
     });
+  });
+
+  it('should clean up event listeners on unmount using abort signal', () => {
+    const addEventListenerSpy = vi.spyOn(ref.current, 'addEventListener');
+    const controllerSpy = vi.spyOn(AbortController.prototype, 'abort');
+
+    const { unmount } = renderHook(() => useScroll(ref));
+
+    expect(addEventListenerSpy).toHaveBeenCalledWith(
+      'scroll',
+      expect.any(Function),
+      expect.objectContaining({
+        passive: true,
+        signal: expect.any(AbortSignal)
+      })
+    );
+
+    unmount();
+
+    expect(controllerSpy).toHaveBeenCalledTimes(1);
+
+    controllerSpy.mockRestore();
   });
 });

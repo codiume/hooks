@@ -1,9 +1,9 @@
+export { useClipboard } from './use-clipboard/use-clipboard';
+export { useHover } from './use-hover/use-hover';
 export { useInViewport } from './use-in-viewport/use-in-viewport';
 export { useLocalStorage } from './use-local-storage/use-local-storage';
+export { useMediaQuery } from './use-media-query/use-media-query';
 export { useQueue } from './use-queue/use-queue';
 export { useScroll } from './use-scroll/use-scroll';
 export { useSingleton } from './use-singleton/use-singleton';
 export { useWindowScroll } from './use-window-scroll/use-window-scroll';
-export { useMediaQuery } from './use-media-query/use-media-query';
-export { useClipboard } from './use-clip-board/use-clip-board';
-export { useHover } from './use-hover/use-hover';

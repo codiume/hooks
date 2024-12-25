@@ -1,6 +1,6 @@
 import { act, renderHook } from '@testing-library/react';
 import { describe, expect, it, vi } from 'vitest';
-import { useClipboard } from './use-clip-board';
+import { useClipboard } from './use-clipboard';
 
 vi.useFakeTimers();
 

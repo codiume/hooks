@@ -1,4 +1,5 @@
 import { useCallback, useState } from 'react';
+import { rescue } from '../utils';
 
 export function useClipboard() {
   const [copied, setCopied] = useState(false);
@@ -8,16 +9,18 @@ export function useClipboard() {
       console.error('Clipboard API not supported');
       return false;
     }
-
-    try {
-      await navigator.clipboard.writeText(text);
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
-      return true;
-    } catch (error) {
-      console.error('Failed to copy text:', error);
-      return false;
-    }
+    return rescue<boolean>(
+      async () => {
+        await navigator.clipboard.writeText(text);
+        setCopied(true);
+        setTimeout(() => setCopied(false), 2000);
+        return true;
+      },
+      (err) => {
+        console.error('Failed to copy text:', err);
+        return false;
+      }
+    );
   }, []);
 
   return { copy, copied };

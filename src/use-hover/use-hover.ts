@@ -7,15 +7,20 @@ export function useHover<T extends HTMLElement | null>(ref: RefObject<T>) {
     const element = ref.current;
     if (!element) return;
 
-    const handleMouseEnter = () => setIsHovered(true);
-    const handleMouseLeave = () => setIsHovered(false);
+    const abortController = new AbortController();
 
-    element.addEventListener('mouseenter', handleMouseEnter);
-    element.addEventListener('mouseleave', handleMouseLeave);
+    element.addEventListener('mouseenter', () => setIsHovered(true), {
+      passive: true,
+      signal: abortController.signal
+    });
+
+    element.addEventListener('mouseleave', () => setIsHovered(false), {
+      passive: true,
+      signal: abortController.signal
+    });
 
     return () => {
-      element.removeEventListener('mouseenter', handleMouseEnter);
-      element.removeEventListener('mouseleave', handleMouseLeave);
+      abortController.abort();
     };
   }, [ref]);
 

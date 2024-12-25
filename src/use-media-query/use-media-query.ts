@@ -7,10 +7,20 @@ export function useMediaQuery(query: string): boolean {
 
   useEffect(() => {
     const mediaQueryList = window.matchMedia(query);
-    const listener = (event: MediaQueryListEvent) => setMatches(event.matches);
-    mediaQueryList.addEventListener('change', listener);
+
+    const abortController = new AbortController();
+
+    mediaQueryList.addEventListener(
+      'change',
+      (event: MediaQueryListEvent) => setMatches(event.matches),
+      {
+        passive: true,
+        signal: abortController.signal
+      }
+    );
+
     return () => {
-      mediaQueryList.removeEventListener('change', listener);
+      abortController.abort();
     };
   }, [query]);
 
