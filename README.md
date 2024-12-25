@@ -17,6 +17,11 @@ pnpm install @codiume/hooks
 ```
 
 ```bash
+# Using Bun
+bun add @codiume/hooks
+```
+
+```bash
 # Using NPM
 npm install @codiume/hooks
 ```
