@@ -1,5 +1,11 @@
 # @codiume/hooks
 
+## 0.3.1
+
+### Patch Changes
+
+- [#100](https://github.com/codiume/hooks/pull/100) [`85effef`](https://github.com/codiume/hooks/commit/85effef540c2f8c802ba59c90a31e916740d8064) Thanks [@NekoSakuraLucia](https://github.com/NekoSakuraLucia)! - Added comments to the function along with an explanation of its functionality.
+
 ## 0.3.0
 
 ### Minor Changes
