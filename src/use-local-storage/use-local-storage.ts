@@ -5,27 +5,27 @@ type SetValue<T> = T | ((val: T) => T);
 
 /**
  * Custom hook for managing state with localStorage persistence
- * 
+ *
  * This hook synchronizes a state value with `localStorage`, allowing it to persist
  * across page reloads and different browser tabs. It offers the same API as `useState`,
  * with the added functionality of storing the value in `localStorage`.
- * 
+ *
  * @param key The key under which the value is stored in `localStorage`.
  * @param initialValue The initial value to be used if no value is found in `localStorage`.
- * 
+ *
  * @returns A tuple:
  *   - `storedValue`: The current value from `localStorage` or the initial value if none exists.
  *   - `setValue`: A function to update the value, which will also update `localStorage`.
- * 
+ *
  * Usage:
  *   1. Call `useLocalStorage` with a key and initial value.
  *   2. Use `storedValue` in your component to get the persisted state value.
  *   3. Use `setValue` to update the state and the value in `localStorage`.
- * 
+ *
  * Example usage:
  * ```tsx
  * const [name, setName] = useLocalStorage('name', 'John Doe');
- * 
+ *
  * return (
  *   <div>
  *     <input

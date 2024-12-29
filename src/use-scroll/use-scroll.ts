@@ -7,25 +7,25 @@ type ScrollPosition = {
 
 /**
  * Custom hook for tracking and controlling the scroll position of an element.
- * 
+ *
  * This hook provides two main functionalities:
  *   1. Tracks the current scroll position (`x` and `y` coordinates) of a specified element.
  *   2. Provides a function to programmatically scroll the element to specific coordinates (`x`, `y`).
- * 
+ *
  * @param ref A reference to the HTML element whose scroll position you want to track or control.
- * 
+ *
  * @returns A tuple containing:
  *   - The current scroll position object, containing `x` (horizontal scroll) and `y` (vertical scroll).
  *   - A function `scrollTo` that allows you to scroll the element to a specified position.
- * 
+ *
  * Example usage:
  * ```tsx
  * import { useScroll } from "@codiume/hooks";
- * 
+ *
  * function Demo() {
  *   const ref = useRef<HTMLDivElement>(null);
  *   const [{ x, y }, scrollTo] = useScroll(ref);
- * 
+ *
  *   return (
  *     <div>
  *       <p>Scroll position: x: {x}, y: {y}</p>
@@ -40,7 +40,7 @@ type ScrollPosition = {
  *   );
  * }
  * ```
- * 
+ *
  * In this example:
  * - `ref` is used to track a scrollable container's position.
  * - The scroll position (`x`, `y`) is shown on the screen.
