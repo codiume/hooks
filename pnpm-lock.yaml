@@ -29,16 +29,16 @@ importers:
         version: 2.27.11
       '@testing-library/react':
         specifier: ^16.1.0
-        version: 16.1.0(@testing-library/dom@10.4.0)(@types/react-dom@19.0.2(@types/react@19.0.4))(@types/react@19.0.4)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+        version: 16.1.0(@testing-library/dom@10.4.0)(@types/react-dom@19.0.3(@types/react@19.0.5))(@types/react@19.0.5)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       '@total-typescript/tsconfig':
         specifier: ^1.0.4
         version: 1.0.4
       '@types/react':
         specifier: ^19.0.1
-        version: 19.0.4
+        version: 19.0.5
       '@types/react-dom':
         specifier: ^19.0.1
-        version: 19.0.2(@types/react@19.0.4)
+        version: 19.0.3(@types/react@19.0.5)
       '@vitejs/plugin-react':
         specifier: ^4.3.4
         version: 4.3.4(vite@5.4.11)
@@ -773,13 +773,13 @@ packages:
   '@types/node@12.20.55':
     resolution: {integrity: sha512-J8xLz7q2OFulZ2cyGTLE1TbbZcjpno7FaN6zdJNrgAdrJ+DZzh/uFR6YrTb4C+nXakvud8Q4+rbhoIWlYQbUFQ==}
 
-  '@types/react-dom@19.0.2':
-    resolution: {integrity: sha512-c1s+7TKFaDRRxr1TxccIX2u7sfCnc3RxkVyBIUA2lCpyqCF+QoAwQ/CBg7bsMdVwP120HEH143VQezKtef5nCg==}
+  '@types/react-dom@19.0.3':
+    resolution: {integrity: sha512-0Knk+HJiMP/qOZgMyNFamlIjw9OFCsyC2ZbigmEEyXXixgre6IQpm/4V+r3qH4GC1JPvRJKInw+on2rV6YZLeA==}
     peerDependencies:
       '@types/react': ^19.0.0
 
-  '@types/react@19.0.4':
-    resolution: {integrity: sha512-3O4QisJDYr1uTUMZHA2YswiQZRq+Pd8D+GdVFYikTutYsTz+QZgWkAPnP7rx9txoI6EXKcPiluMqWPFV3tT9Wg==}
+  '@types/react@19.0.5':
+    resolution: {integrity: sha512-i4OQzFiqsUCfoBns/KHpz+4QcvfjoCsTUi+mugo3lrSRA3+x0gJVvhZhAJrwLGEqz4EXiFVP4hPnOugx+m2uhg==}
 
   '@vitejs/plugin-react@4.3.4':
     resolution: {integrity: sha512-SCCPBJtYLdE8PX/7ZQAs1QAZ8Jqwih+0VBLum1EGqmCCQal+MIUqLCzj3ZUy8ufbC0cAM4LRlSTm7IQJwWT4ug==}
@@ -2552,15 +2552,15 @@ snapshots:
       lz-string: 1.5.0
       pretty-format: 27.5.1
 
-  '@testing-library/react@16.1.0(@testing-library/dom@10.4.0)(@types/react-dom@19.0.2(@types/react@19.0.4))(@types/react@19.0.4)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
+  '@testing-library/react@16.1.0(@testing-library/dom@10.4.0)(@types/react-dom@19.0.3(@types/react@19.0.5))(@types/react@19.0.5)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
     dependencies:
       '@babel/runtime': 7.26.0
       '@testing-library/dom': 10.4.0
       react: 19.0.0
       react-dom: 19.0.0(react@19.0.0)
     optionalDependencies:
-      '@types/react': 19.0.4
-      '@types/react-dom': 19.0.2(@types/react@19.0.4)
+      '@types/react': 19.0.5
+      '@types/react-dom': 19.0.3(@types/react@19.0.5)
 
   '@total-typescript/tsconfig@1.0.4': {}
 
@@ -2591,11 +2591,11 @@ snapshots:
 
   '@types/node@12.20.55': {}
 
-  '@types/react-dom@19.0.2(@types/react@19.0.4)':
+  '@types/react-dom@19.0.3(@types/react@19.0.5)':
     dependencies:
-      '@types/react': 19.0.4
+      '@types/react': 19.0.5
 
-  '@types/react@19.0.4':
+  '@types/react@19.0.5':
     dependencies:
       csstype: 3.1.3
 
