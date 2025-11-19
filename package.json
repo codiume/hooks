@@ -3,7 +3,13 @@
   "version": "0.3.1",
   "description": "A collection of reusable react hooks for state and UI management",
   "homepage": "https://github.com/codiume/hooks.git",
-  "keywords": ["hooks", "library", "react", "react-hooks", "state"],
+  "keywords": [
+    "hooks",
+    "library",
+    "react",
+    "react-hooks",
+    "state"
+  ],
   "author": "MHD <m@codiume.com>",
   "contributors": [
     {
@@ -15,7 +21,9 @@
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "exports": {
     ".": {
       "import": {
@@ -52,18 +60,18 @@
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
-    "@arethetypeswrong/cli": "^0.18.0",
+    "@arethetypeswrong/cli": "^0.18.2",
     "@biomejs/biome": "1.9.4",
-    "@changesets/changelog-github": "^0.5.0",
-    "@changesets/cli": "^2.27.10",
-    "@testing-library/react": "^16.1.0",
+    "@changesets/changelog-github": "^0.5.1",
+    "@changesets/cli": "^2.29.7",
+    "@testing-library/react": "^16.3.0",
     "@total-typescript/tsconfig": "^1.0.4",
-    "@types/react": "^19.0.1",
-    "@types/react-dom": "^19.0.1",
-    "@vitejs/plugin-react": "^5.0.0",
-    "jsdom": "^27.0.0",
-    "tsup": "^8.3.5",
-    "typescript": "^5.7.2",
-    "vitest": "^3.0.0"
+    "@types/react": "^19.2.6",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^5.1.1",
+    "jsdom": "^27.2.0",
+    "tsup": "^8.5.1",
+    "typescript": "^5.9.3",
+    "vitest": "^3.2.4"
   }
 }
