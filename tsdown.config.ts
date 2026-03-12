@@ -9,6 +9,5 @@ export default defineConfig({
   minify: true,
   sourcemap: true,
   treeshake: true,
-  platform: 'browser',
-  target: false
+  platform: 'browser'
 });
