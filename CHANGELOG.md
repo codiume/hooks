@@ -1,5 +1,11 @@
 # @codiume/hooks
 
+## 1.0.0
+
+### Major Changes
+
+- [#241](https://github.com/codiume/hooks/pull/241) [`1e06cbd`](https://github.com/codiume/hooks/commit/1e06cbd2be4cd77be4ee4bd5b0e01a68e1e1dc98) Thanks [@mhdcodes](https://github.com/mhdcodes)! - v1.0.0
+
 ## 0.3.1
 
 ### Patch Changes
