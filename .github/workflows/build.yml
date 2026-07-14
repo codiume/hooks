@@ -24,8 +24,7 @@ jobs:
       - name: Install pnpm
         uses: pnpm/action-setup@v6
         with:
-          version: 11
-          standalone: true
+          version: 11.7.0
           run_install: true
 
       - name: Run tests
@@ -47,8 +46,7 @@ jobs:
       - name: Install pnpm
         uses: pnpm/action-setup@v6
         with:
-          version: 11
-          standalone: true
+          version: 11.7.0
           run_install: true
 
       - name: Build
