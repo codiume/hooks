@@ -6,7 +6,7 @@ let IntersectionObserverMock: Partial<IntersectionObserver>;
 
 function setupIntersectionMocking() {
   // @ts-ignore
-  global.IntersectionObserver = vi.fn(() => {
+  globalThis.IntersectionObserver = vi.fn(() => {
     IntersectionObserverMock = {
       observe: vi.fn(),
       unobserve: vi.fn(),
@@ -58,16 +58,16 @@ describe('useInViewport', () => {
   });
 
   it('should not create observer if IntersectionObserver is not available', () => {
-    const originalIntersectionObserver = global.IntersectionObserver;
+    const originalIntersectionObserver = globalThis.IntersectionObserver;
     // @ts-ignore
     // biome-ignore lint/performance/noDelete: test file
-    delete global.IntersectionObserver;
+    delete globalThis.IntersectionObserver;
 
     const { result } = renderHook(() => useInViewport());
 
     expect(result.current[1]).toBe(false);
 
-    global.IntersectionObserver = originalIntersectionObserver;
+    globalThis.IntersectionObserver = originalIntersectionObserver;
   });
 
   it('should not throw error if ref is null', () => {
