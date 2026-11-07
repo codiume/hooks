@@ -28,3 +28,9 @@ yarn.lock
 .idea
 .vscode
 .astro
+
+# test coverage
+coverage/
+
+# claude code (local settings, worktrees)
+.claude/

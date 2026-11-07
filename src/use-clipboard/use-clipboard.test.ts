@@ -32,6 +32,9 @@ describe('useClipboard', () => {
     Object.assign(navigator, {
       clipboard: undefined
     });
+    const consoleErrorSpy = vi
+      .spyOn(console, 'error')
+      .mockImplementation(() => {});
 
     const { result } = renderHook(() => useClipboard());
 
@@ -39,5 +42,8 @@ describe('useClipboard', () => {
       const success = await result.current.copy('Hello, world!');
       expect(success).toBe(false);
     });
+
+    expect(consoleErrorSpy).toHaveBeenCalledWith('Clipboard API not supported');
+    consoleErrorSpy.mockRestore();
   });
 });

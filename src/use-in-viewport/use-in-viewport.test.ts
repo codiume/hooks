@@ -5,8 +5,9 @@ import { useInViewport } from './use-in-viewport';
 let IntersectionObserverMock: Partial<IntersectionObserver>;
 
 function setupIntersectionMocking() {
-  // @ts-ignore
-  globalThis.IntersectionObserver = vi.fn(() => {
+  // @ts-expect-error
+  // biome-ignore lint/complexity/useArrowFunction: the mock is called with `new`, so it must be constructible
+  globalThis.IntersectionObserver = vi.fn(function () {
     IntersectionObserverMock = {
       observe: vi.fn(),
       unobserve: vi.fn(),
@@ -41,7 +42,7 @@ describe('useInViewport', () => {
   it('should update inViewport when intersection changes', () => {
     const { result } = renderHook(() => useInViewport());
 
-    // @ts-ignore
+    // @ts-expect-error
     const callback = IntersectionObserver.mock.calls[0][0];
 
     act(() => {
@@ -59,8 +60,7 @@ describe('useInViewport', () => {
 
   it('should not create observer if IntersectionObserver is not available', () => {
     const originalIntersectionObserver = globalThis.IntersectionObserver;
-    // @ts-ignore
-    // biome-ignore lint/performance/noDelete: test file
+    // @ts-expect-error
     delete globalThis.IntersectionObserver;
 
     const { result } = renderHook(() => useInViewport());
@@ -75,7 +75,6 @@ describe('useInViewport', () => {
 
     expect(() => {
       const [ref] = result.current;
-      // @ts-ignore
       ref.current = null;
     }).not.toThrow();
   });
