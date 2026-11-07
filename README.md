@@ -59,7 +59,7 @@ Please see the [Changelog](CHANGELOG.md) for more information on what has change
 
 ## License
 
-Please see the [LICENSE](.github/LICENSE) for more information.
+Please see the [LICENSE](LICENSE) for more information.
 
 [npm]: https://www.npmjs.com/package/@codiume/hooks
 [version-badge]: https://img.shields.io/npm/v/%40codiume%2Fhooks.svg
