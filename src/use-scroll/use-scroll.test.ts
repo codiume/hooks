@@ -1,6 +1,6 @@
 import { act, renderHook } from '@testing-library/react';
 import type { RefObject } from 'react';
-import { type Mock, beforeEach, describe, expect, it, vi } from 'vitest';
+import { beforeEach, describe, expect, it, type Mock, vi } from 'vitest';
 import { useScroll } from './use-scroll';
 
 interface MockElement extends Partial<HTMLElement> {
@@ -38,7 +38,7 @@ describe('useScroll', () => {
     act(() => {
       mockElement.scrollLeft = 100;
       mockElement.scrollTop = 200;
-      /* @ts-ignore */
+      /* @ts-expect-error */
       mockElement.addEventListener.mock.calls[0][1]();
     });
 

@@ -13,10 +13,16 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v7
 
-      - name: Setup Biome
-        uses: biomejs/setup-biome@v2
+      - name: Use Node.js
+        uses: actions/setup-node@v6
         with:
-          version: "1.9.4"
+          node-version: "26"
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v6
+        with:
+          version: 12.18.0
+          run_install: true
 
       - name: Run Biome
-        run: biome ci src
+        run: pnpm exec biome ci src

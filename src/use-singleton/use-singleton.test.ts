@@ -19,7 +19,7 @@ describe('useSingleton', () => {
   it('should only call the factory function once', () => {
     const factoryFn = vi.fn(() => ({ foo: 'bar' }));
 
-    const { result, rerender } = renderHook(() => useSingleton(factoryFn));
+    const { rerender } = renderHook(() => useSingleton(factoryFn));
 
     expect(factoryFn).toHaveBeenCalledTimes(1);
 

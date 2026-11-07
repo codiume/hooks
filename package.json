@@ -40,7 +40,9 @@
     "prebuild": "pnpm check-lint && pnpm check-types",
     "build": "tsdown",
     "postbuild": "pnpm check-exports",
-    "test": "vitest test",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
     "lint": "biome lint --write .",
     "format": "biome format --write .",
     "check-lint": "biome check src",
@@ -61,17 +63,19 @@
   },
   "devDependencies": {
     "@arethetypeswrong/cli": "^0.18.5",
-    "@biomejs/biome": "1.9.4",
+    "@biomejs/biome": "2.6.5",
     "@changesets/changelog-github": "^1.0.1",
     "@changesets/cli": "^3.0.3",
     "@testing-library/react": "^16.3.3",
     "@total-typescript/tsconfig": "^1.0.4",
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
-    "@vitejs/plugin-react": "^5.2.0",
+    "@vitejs/plugin-react": "^6.2.1",
+    "@vitest/coverage-v8": "^5.1.0",
     "jsdom": "^31.0.0",
     "tsdown": "^0.23.7",
     "typescript": "^7.0.2",
-    "vitest": "^3.2.7"
+    "vite": "^8.3.6",
+    "vitest": "^5.1.0"
   }
 }

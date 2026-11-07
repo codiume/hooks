@@ -3,7 +3,7 @@ type FallbackFunc<T> = (err: Error) => T;
 
 export function rescue<T>(
   callback: CallbackFunc<T>,
-  fallback: FallbackFunc<T> = (err) => null as unknown as T
+  fallback: FallbackFunc<T> = (_err) => null as unknown as T
 ): T | Promise<T> {
   try {
     return callback();
