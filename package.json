@@ -24,6 +24,11 @@
   "files": [
     "dist"
   ],
+  "sideEffects": false,
+  "engines": {
+    "node": ">=22.12"
+  },
+  "packageManager": "pnpm@12.18.0",
   "exports": {
     ".": {
       "import": {
@@ -50,12 +55,12 @@
     "check-types": "tsc",
     "changeset": "changeset",
     "changeset:version": "changeset version && pnpm run format",
-    "changeset:publish": "pnpm build && changeset publish"
+    "changeset:publish": "pnpm test && pnpm build && changeset publish"
   },
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/codiume/hooks.git"
+    "url": "git+https://github.com/codiume/hooks.git"
   },
   "peerDependencies": {
     "react": "^19.0.0",
