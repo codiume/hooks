@@ -25,7 +25,7 @@ To include a changeset in your PR:
 1. Create a changeset using the following command within your project directory:
 
 ```bash
-pnpm changesets
+pnpm changeset
 ```
 
 2. Follow the prompts to describe the changes introduced in your PR. Ensure the changeset adheres to our contribution guidelines.
@@ -34,4 +34,4 @@ pnpm changesets
 
 Including changesets in your PR demonstrates transparency and facilitates smoother version management. PRs lacking corresponding changesets may be subject to additional review or may not be merged until changesets are provided.
 
-For more information on using Changesets, refer to the official documentation.
+For more information on using Changesets, refer to the [official documentation](https://github.com/changesets/changesets).
