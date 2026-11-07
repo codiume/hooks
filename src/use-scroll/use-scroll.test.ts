@@ -1,6 +1,7 @@
 import { act, renderHook } from '@testing-library/react';
 import type { RefObject } from 'react';
 import { beforeEach, describe, expect, it, type Mock, vi } from 'vitest';
+
 import { useScroll } from './use-scroll';
 
 interface MockElement extends Partial<HTMLElement> {

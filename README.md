@@ -5,7 +5,8 @@
 [![Github Actions][github-actions-badge]][github-actions]
 [![Make a PR][makepr-badge]][makepr]
 [![Typescript][typescript-badge]][npm]
-[![Formatted with Biome][biome-badge]][biome]
+[![Linted with oxlint][oxlint-badge]][oxc]
+[![Formatted with oxfmt][oxfmt-badge]][oxc]
 
 A collection of reusable react hooks for state and UI management
 
@@ -64,10 +65,11 @@ Please see the [LICENSE](LICENSE) for more information.
 [npm]: https://www.npmjs.com/package/@codiume/hooks
 [version-badge]: https://img.shields.io/npm/v/%40codiume%2Fhooks.svg
 [downloads-badge]: https://img.shields.io/npm/dt/%40codiume%2Fhooks
-[github-actions]: https://github.com/codiume/hooks/actions/workflows/build.yml
-[github-actions-badge]: https://github.com/codiume/hooks/actions/workflows/build.yml/badge.svg?branch=main
+[github-actions]: https://github.com/codiume/hooks/actions/workflows/ci.yml
+[github-actions-badge]: https://github.com/codiume/hooks/actions/workflows/ci.yml/badge.svg?branch=main
 [typescript-badge]: https://img.shields.io/npm/types/%40codiume%2Fhooks
 [makepr]: https://makeapullrequest.com
 [makepr-badge]: https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square?style=flat
-[biome]: https://biomejs.dev
-[biome-badge]: https://img.shields.io/badge/Formatted_with-Biome-60a5fa?style=flat&logo=biome
+[oxc]: https://oxc.rs
+[oxlint-badge]: https://img.shields.io/badge/Linted_with-oxlint-32f3e8?style=flat
+[oxfmt-badge]: https://img.shields.io/badge/Formatted_with-oxfmt-32f3e8?style=flat

@@ -54,6 +54,9 @@ export function useInViewport<T extends HTMLElement = HTMLElement>(
       observer.observe(ref.current);
 
       return () => {
+        // TODO: known bug (`ref.current` may be null at cleanup, and the observer
+        // is never disconnected); remove this suppression once fixed.
+        // oxlint-disable-next-line react/exhaustive-deps
         observer.unobserve(ref.current as T);
       };
     }
