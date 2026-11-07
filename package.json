@@ -50,7 +50,7 @@
     "test:coverage": "vitest run --coverage",
     "lint": "biome lint --write .",
     "format": "biome format --write .",
-    "check-lint": "biome check src",
+    "check-lint": "biome check .",
     "check-exports": "attw --pack .",
     "check-types": "tsc",
     "changeset": "changeset",

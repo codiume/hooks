@@ -1,5 +1,10 @@
 {
   "$schema": "https://biomejs.dev/schemas/2.6.5/schema.json",
+  "vcs": {
+    "enabled": true,
+    "clientKind": "git",
+    "useIgnoreFile": true
+  },
   "assist": {
     "actions": {
       "source": {
@@ -11,8 +16,7 @@
     "enabled": true,
     "rules": {
       "preset": "recommended"
-    },
-    "includes": ["**", "!**/dist", "!**/node_modules"]
+    }
   },
   "formatter": {
     "enabled": true,
@@ -21,8 +25,7 @@
     "indentWidth": 2,
     "lineEnding": "lf",
     "lineWidth": 80,
-    "attributePosition": "auto",
-    "includes": ["**", "!**/dist", "!**/node_modules"]
+    "attributePosition": "auto"
   },
   "javascript": {
     "formatter": {

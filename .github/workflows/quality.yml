@@ -24,4 +24,4 @@ jobs:
           run_install: true
 
       - name: Run Biome
-        run: pnpm exec biome ci src
+        run: pnpm exec biome ci .

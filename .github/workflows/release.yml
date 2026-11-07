@@ -33,8 +33,7 @@ jobs:
         with:
           version-script: pnpm run changeset:version
           publish-script: pnpm run changeset:publish
-
+        # npm auth uses trusted publishing (OIDC via `id-token: write`), not a
+        # token secret. Provenance is attached automatically.
         env:
-          NPM_CONFIG_PROVENANCE: true
           GITHUB_TOKEN: ${{ github.token }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
