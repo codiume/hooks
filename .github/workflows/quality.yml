@@ -21,7 +21,6 @@ jobs:
       - name: Install pnpm
         uses: pnpm/action-setup@v6
         with:
-          version: 12.18.0
           run_install: true
 
       - name: Run Biome
