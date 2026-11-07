@@ -4,9 +4,9 @@ A React hook that tracks the hover state of a DOM element, utilizing `AbortContr
 
 ## Usage
 
-```jsx
-import { useRef } from 'react';
+```tsx
 import { useHover } from '@codiume/hooks';
+import { useRef } from 'react';
 
 export default function App() {
   const hoverRef = useRef<HTMLDivElement>(null);
@@ -17,14 +17,14 @@ export default function App() {
       <div
         ref={hoverRef}
         style={{
-          width: "200px",
-          height: "100px",
-          backgroundColor: isHovered ? "blue" : "gray",
+          width: '200px',
+          height: '100px',
+          backgroundColor: isHovered ? 'blue' : 'gray'
         }}
       >
         Hover over me!
       </div>
-      <p>{isHovered ? "You are hovering!" : "Not hovering"}</p>
+      <p>{isHovered ? 'You are hovering!' : 'Not hovering'}</p>
     </div>
   );
 }

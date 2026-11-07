@@ -9,8 +9,8 @@ on:
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
 jobs:
-  test:
-    name: Test
+  ci:
+    name: Lint, test and build
     runs-on: ubuntu-latest
 
     steps:
@@ -19,33 +19,21 @@ jobs:
       - name: Use Node.js
         uses: actions/setup-node@v6
         with:
-          node-version: "26"
+          node-version: '26'
 
       - name: Install pnpm
         uses: pnpm/action-setup@v6
         with:
           run_install: true
+
+      - name: Lint and check formatting
+        run: pnpm check-lint
+
+      - name: Typecheck
+        run: pnpm check-types
 
       - name: Run tests
         run: pnpm test
-
-  build:
-    name: Build
-    needs: test
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v7
-
-      - name: Use Node.js
-        uses: actions/setup-node@v6
-        with:
-          node-version: "26"
-
-      - name: Install pnpm
-        uses: pnpm/action-setup@v6
-        with:
-          run_install: true
 
       - name: Build
         run: pnpm build

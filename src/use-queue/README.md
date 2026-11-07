@@ -5,8 +5,8 @@ It's type-safe, easy to use, and can be adapted for various use cases where FIFO
 
 ## Usage
 
-```jsx
-import { useQueue } from "@codiume/hooks";
+```tsx
+import { useQueue } from '@codiume/hooks';
 
 function Demo() {
   const [state, actions] = useQueue<string>([], 5);
@@ -59,27 +59,30 @@ Return value:
 
 This hook acceptes types information:
 
-```jsx
+```tsx
 type Person = { id: number; name: string };
 
 const [state, actions] = useQueue<Person>([], 5);
 
-actions.enqueue({ id: 1, name: "John Doe" });
+actions.enqueue({ id: 1, name: 'John Doe' });
 ```
 
 ## Type Definition
 
 ```typescript
 type QueueState<T> = {
-    active: T[];
-    queue: T[];
+  active: T[];
+  queue: T[];
 };
 type QueueActions<T> = {
-    enqueue: (item: T) => void;
-    dequeue: () => T | undefined;
-    clear: () => void;
-    clearQueue: () => void;
-    clearActive: () => void;
+  enqueue: (item: T) => void;
+  dequeue: () => T | undefined;
+  clear: () => void;
+  clearQueue: () => void;
+  clearActive: () => void;
 };
-function useQueue<T>(initialValues?: T[], limit?: number): [QueueState<T>, QueueActions<T>];
+function useQueue<T>(
+  initialValues?: T[],
+  limit?: number
+): [QueueState<T>, QueueActions<T>];
 ```

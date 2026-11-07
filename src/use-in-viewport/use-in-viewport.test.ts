@@ -1,12 +1,12 @@
 import { act, cleanup, renderHook } from '@testing-library/react';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
+
 import { useInViewport } from './use-in-viewport';
 
 let IntersectionObserverMock: Partial<IntersectionObserver>;
 
 function setupIntersectionMocking() {
   // @ts-expect-error
-  // biome-ignore lint/complexity/useArrowFunction: the mock is called with `new`, so it must be constructible
   globalThis.IntersectionObserver = vi.fn(function () {
     IntersectionObserverMock = {
       observe: vi.fn(),

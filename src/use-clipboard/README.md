@@ -4,9 +4,9 @@ A React hook that simplifies copying text to the clipboard. It offers an easy-to
 
 ## Usage
 
-```jsx
-import React from 'react';
+```tsx
 import { useClipboard } from '@codiume/hooks';
+import React from 'react';
 
 export default function App() {
   const { copy, copied } = useClipboard();

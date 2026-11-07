@@ -58,6 +58,9 @@ export function useQueue<T>(
   }));
 
   useEffect(() => {
+    // TODO: derive the split from `limit` during render instead; remove this
+    // suppression once fixed.
+    // oxlint-disable-next-line react/set-state-in-effect
     setState((current) => {
       const newState = [...current.active, ...current.queue];
       return {

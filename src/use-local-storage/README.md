@@ -4,7 +4,7 @@ A React hook that provides a way to use localStorage with a similar API to useSt
 
 ## Usage
 
-```jsx
+```tsx
 import { useLocalStorage } from '@hooks/use-local-storage';
 
 function Demo() {
@@ -14,7 +14,7 @@ function Demo() {
   const [colorScheme, setColorScheme] = useLocalStorage('color-scheme', 'dark');
 
   const toggleColorScheme = () => {
-    setColorScheme(prevScheme => prevScheme === 'dark' ? 'light' : 'dark');
+    setColorScheme((prevScheme) => (prevScheme === 'dark' ? 'light' : 'dark'));
   };
 
   return (

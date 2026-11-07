@@ -4,30 +4,26 @@ Creates a value exactly once.
 
 ## Usage
 
-```jsx
-import { useSingleton } from "@codiume/hooks";
+```tsx
+import { useSingleton } from '@codiume/hooks';
 
 function Demo() {
   const value = useSingleton(() => ({ foo: 'bar' }));
 
-  return (
-    <div>{value}</div>
-  );
+  return <div>{value}</div>;
 }
 ```
 
 ## Example (TanStack Query)
 
-```jsx
-import { useSingleton } from "@codiume/hooks";
+```tsx
+import { useSingleton } from '@codiume/hooks';
 
 function Demo() {
   const queryClient = useSingleton(() => new QueryClient());
 
   return (
-    <QueryClientProvider client={queryClient}>
-      {children}
-    </QueryClientProvider>
+    <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
   );
 }
 ```

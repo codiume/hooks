@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useState } from 'react';
+
 import { rescue } from '../utils';
 
 type SetValue<T> = T | ((val: T) => T);
@@ -66,7 +67,9 @@ export function useLocalStorage<T>(
         () => {
           // Allow value to be a function so we have same API as useState
           const valueToStore =
-            value instanceof Function ? value(storedValue) : value;
+            typeof value === 'function'
+              ? (value as (val: T) => T)(storedValue)
+              : value;
           // Save state
           setStoredValue(valueToStore);
           // Save to local storage
@@ -81,6 +84,9 @@ export function useLocalStorage<T>(
   );
 
   useEffect(() => {
+    // TODO: known bug (re-render loop when `initialValue` is an object); remove
+    // this suppression once fixed.
+    // oxlint-disable-next-line react/set-state-in-effect, react/no-deriving-state-in-effects
     setStoredValue(readValue());
   }, [readValue]);
 

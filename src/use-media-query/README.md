@@ -4,9 +4,9 @@ A React hook that monitors whether a specific media query matches the current vi
 
 ## Usage
 
-```jsx
-import React from 'react';
+```tsx
 import { useMediaQuery } from '@codiume/hooks';
+import React from 'react';
 
 const ExampleComponent = () => {
   const isDesktop = useMediaQuery('(min-width: 768px)');
