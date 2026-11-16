@@ -28,7 +28,7 @@
   "engines": {
     "node": ">=22.12"
   },
-  "packageManager": "pnpm@12.18.0",
+  "packageManager": "pnpm@12.21.0",
   "exports": {
     ".": {
       "import": {
@@ -77,8 +77,8 @@
     "@vitejs/plugin-react": "^6.2.1",
     "@vitest/coverage-v8": "^5.1.0",
     "jsdom": "^31.0.0",
-    "oxfmt": "0.77.0",
-    "oxlint": "1.92.0",
+    "oxfmt": "0.78.0",
+    "oxlint": "1.93.0",
     "tsdown": "^0.23.7",
     "typescript": "^7.0.2",
     "vite": "^8.3.6",
